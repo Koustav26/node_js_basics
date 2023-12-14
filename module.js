@@ -6,10 +6,10 @@
 
 // Local module   =============>>>>>>>>>>
 
-const auth = require("./auth");
+// const auth = require("./auth");
 
-auth.register("codersgyan");
-auth.login("codersgyan", "12345");
+// auth.register("codersgyan");
+// auth.login("codersgyan", "12345");
 
 // register("koustav");
 
@@ -76,4 +76,131 @@ auth.login("codersgyan", "12345");
 //   console.log("Folder created....");
 // });
 
-// create a file
+// create a file (to create a file)
+
+// fs.writeFile(path.join(__dirname, "/test", "text.txt"), "Hello Node", (err) => {
+//   if (err) {
+//     throw err;
+//   }
+//   console.log("File created in test folder...");
+// });
+
+// (After creating a new file in a specified folder if we run again
+// node module.js then the code not gie us any type of error but it will
+// follow the path and check if the file name is same then it will
+//replace all is written in the file with the new context of the file
+// when we reun the code again)
+
+// (if we want to add some context in the file which we create early)
+
+// fs.writeFile(
+//   path.join(__dirname, "/test", "text.txt"),
+//   "Hello Node\n",
+//   (err) => {
+// (if we want to show the new data in a new line then we have to to just "\n" after data.)
+//     if (err) {
+//       throw err;
+//     }
+
+//     fs.appendFile(
+//       path.join(__dirname, "/test", "text.txt"),
+//       "More Node js codes\n",
+//       (err) => {
+//         if (err) {
+//           throw err;
+//         }
+//         console.log("Data added...");
+//       }
+//     );
+
+//     console.log("File created in test folder...");
+//   }
+//);
+
+// Read a file
+
+// 1st process --------->
+
+// fs.readFile(path.join(__dirname, "test", "text.txt"), (err, data) => {
+//   if (err) {
+//     throw err;
+//   }
+//   const content = Buffer.from(data);
+//   console.log(content.toString());
+// });
+
+// 2nd process ---------->
+
+// fs.readFile(path.join(__dirname, "test", "text.txt"), "UTF-8", (err, data) => {
+//   if (err) {
+//     throw err;
+//   }
+//   console.log(data);
+// });
+
+// operating system module ---------> (This module can deliver every information
+// on which computer it is running about its operating system.)
+
+// const os = require("os");
+
+// To know the type of the operating system ---------->
+
+// console.log("os type :", os.type());
+
+// Want to know about the platform ------>
+
+//console.log("os platform :", os.platform());
+
+// wnat to know the CPU architechture ------------>
+
+// console.log("Cpu architecture :", os.arch());
+
+// If you want to know more abouth the CPU ---------->
+
+// console.log("Cpu details :", os.cpus());
+
+// Want to know about the free memory about the computer- -------->
+
+// console.log("Free Memory :", os.freemem());
+
+// Want to know the total memory of our computer ----------->
+
+// console.log("Total Memory :", os.totalmem());
+
+// Want to know about the time when your computer start ------->
+
+// console.log("Up Time : ", os.uptime());
+
+// <-------------------- EVENTS MODULE ----------------->
+
+//
+//const Emitter = require("events"); // (here require("events") will return a class and we have to change it to OBJECT.)
+
+// const myEmitter = new Emitter();
+
+// myEmitter.on("someeventname", (data) => {
+//   console.log(data);
+// });
+
+// myEmitter.emit("someeventname", {
+//   name: "Koustav",
+//   lastname: "Basak",
+//   address: "15 M N K Road(S)",
+// });
+
+// <------ Practical Example --------->
+
+// class Auth {
+//   register(username) {
+//     console.log("Registered Successflly...");
+//   }
+// }
+
+// const auth = new Auth();
+// auth.register("Koustav");
+
+// npm module
+const color = require("cli-color");
+
+console.log(color.yellow("hello"));
+console.log(color.red("hello"));
